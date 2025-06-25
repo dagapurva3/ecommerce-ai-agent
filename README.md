@@ -43,12 +43,17 @@ A comprehensive AI-powered shopping assistant inspired by Amazon's Rufus, featur
 - **scikit-learn**: Machine learning for NLP and recommendations
 - **NLTK**: Natural language processing toolkit
 - **python-dotenv**: Environment variable management
+- **Docker**: Containerization for consistent and portable backend deployment
 
 ### Frontend
 - **React 18**: Modern component-based UI framework
 - **Tailwind CSS**: Utility-first CSS framework for responsive design
 - **Axios**: HTTP client for API communication
 - **React Hooks**: State management and side effects
+- **Docker**: Containerization for consistent and portable backend deployment
+
+### DevOps & Orchestration
+- **Docker Compose**: Simplifies running multi-container applications (frontend and backend) with a single command
 
 ### Architecture Decisions
 
@@ -70,14 +75,25 @@ A comprehensive AI-powered shopping assistant inspired by Amazon's Rufus, featur
 - Cosine similarity for product matching
 - Comprehensive text preprocessing capabilities
 
+**Why Docker & Docker Compose?**
+- Ensures consistent development and production environments across different machines
+- Simplifies setup: run both frontend and backend with a single command
+- Makes deployment to any cloud or server straightforward and reliable
+- Isolates dependencies for each service, reducing conflicts and setup time
+
 ## 🚀 Quick Start
 
 ### Prerequisites
 - Python 3.8 or higher
 - Node.js 16 or higher
 - npm or yarn package manager
+- **Docker & Docker Compose** (optional, for containerized setup)
 
-### Backend Setup
+---
+
+### Manual Setup
+
+#### Backend
 
 1. **Navigate to backend directory:**
    ```bash
@@ -99,10 +115,9 @@ A comprehensive AI-powered shopping assistant inspired by Amazon's Rufus, featur
    ```bash
    python app.py
    ```
-
    The backend will run on `http://localhost:5000`
 
-### Frontend Setup
+#### Frontend
 
 1. **Navigate to frontend directory:**
    ```bash
@@ -118,8 +133,36 @@ A comprehensive AI-powered shopping assistant inspired by Amazon's Rufus, featur
    ```bash
    npm start
    ```
-
    The frontend will run on `http://localhost:3000`
+
+---
+
+### 🐳 Dockerized Setup (Recommended)
+
+You can run both the backend and frontend together using Docker and Docker Compose.  
+This ensures a consistent environment and requires no manual dependency installation.
+
+1. **Build and start all services:**
+   ```bash
+   docker-compose up --build
+   ```
+
+2. **Access the app:**
+   - Frontend: [http://localhost:3000](http://localhost:3000)
+   - Backend: [http://localhost:5000](http://localhost:5000)
+
+3. **Stop the containers:**
+   ```bash
+   docker-compose down
+   ```
+
+> **Note:**  
+> - The repository includes `Dockerfile` for both backend and frontend, and a `docker-compose.yml` for orchestration.
+> - Environment variables for the backend can be set in `backend/.env`.
+
+---
+
+This makes it easy for anyone to get started—either with traditional local setup or with a single Docker Compose command!
 
 ## 📚 API Documentation
 
@@ -297,29 +340,31 @@ ecommerce-ai-agent/
 │   ├── products.json               # Sample product database (10+ products)
 │   ├── requirements.txt            # Python dependencies
 │   ├── .env                        # Environment variables (not committed)
-│   └── .env.example                # Example environment config for setup
+│   ├── .env.example                # Example environment config for setup
+│   └── Dockerfile                  # Dockerfile for backend containerization
 ├── frontend/                       # React + Tailwind CSS frontend
 │   ├── package.json                # Node.js dependencies and scripts
 │   ├── tailwind.config.js          # Tailwind CSS configuration
 │   ├── public/
 │   │   └── index.html              # HTML template
-│   └── src/
-│       ├── App.js                  # Main React component
-│       ├── index.js                # React entry point
-│       ├── index.css               # Global styles (Tailwind + custom)
-│       └── components/             # Modular UI components
-│           ├── ChatHeader.js       # Chat header with Agent Mode toggle
-│           ├── ChatInterface.js    # Main chat interface logic
-│           ├── Footer.js           # App footer
-│           ├── Header.js           # App header
-│           ├── InputArea.js        # User input and image upload
-│           ├── MessageBubble.js    # Chat message bubble
-│           ├── MessagesArea.js     # Chat history display
-│           ├── ProductCard.js      # Product display card
-│           └── ProductsDisplay.js  # Product results grid
+│   ├── src/
+│   │   ├── App.js                  # Main React component
+│   │   ├── index.js                # React entry point
+│   │   ├── index.css               # Global styles (Tailwind + custom)
+│   │   └── components/             # Modular UI components
+│   │       ├── ChatHeader.js       # Chat header with Agent Mode toggle
+│   │       ├── ChatInterface.js    # Main chat interface logic
+│   │       ├── Footer.js           # App footer
+│   │       ├── Header.js           # App header
+│   │       ├── InputArea.js        # User input and image upload
+│   │       ├── MessageBubble.js    # Chat message bubble
+│   │       ├── MessagesArea.js     # Chat history display
+│   │       ├── ProductCard.js      # Product display card
+│   │       └── ProductsDisplay.js  # Product results grid
+│   └── Dockerfile                  # Dockerfile for frontend containerization
+├── docker-compose.yml              # Orchestration for multi-container setup
 └── README.md                       # Project documentation (this file)
 ```
-
 
 ## 🔧 Technical Implementation
 
