@@ -1,0 +1,102 @@
+[
+    {
+        "id": 1,
+        "name": "Nike Air Max Running Shoes",
+        "description": "Premium running shoes with advanced cushioning technology, perfect for long-distance running and daily workouts. Features breathable mesh upper and responsive foam midsole.",
+        "price": 129.99,
+        "category": "sports",
+        "brand": "Nike",
+        "image_url": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400",
+        "tags": ["running", "athletic", "shoes", "sports", "workout"]
+    },
+    {
+        "id": 2,
+        "name": "Adidas Performance T-Shirt",
+        "description": "High-performance sports t-shirt made from moisture-wicking fabric. Ideal for gym workouts, running, and athletic activities. Available in multiple colors.",
+        "price": 34.99,
+        "category": "clothing",
+        "brand": "Adidas",
+        "image_url": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400",
+        "tags": ["t-shirt", "sports", "athletic", "workout", "gym"]
+    },
+    {
+        "id": 3,
+        "name": "Premium Yoga Mat",
+        "description": "Non-slip yoga mat with excellent grip and cushioning. Perfect for yoga, pilates, and meditation. Made from eco-friendly materials.",
+        "price": 49.99,
+        "category": "sports",
+        "brand": "Lululemon",
+        "image_url": "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=400",
+        "tags": ["yoga", "mat", "fitness", "meditation", "pilates"]
+    },
+    {
+        "id": 4,
+        "name": "Wireless Bluetooth Headphones",
+        "description": "High-quality wireless headphones with noise cancellation. Perfect for workouts, commuting, and music listening. Long battery life and comfortable fit.",
+        "price": 89.99,
+        "category": "electronics",
+        "brand": "Sony",
+        "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400",
+        "tags": ["headphones", "wireless", "bluetooth", "music", "audio"]
+    },
+    {
+        "id": 5,
+        "name": "Casual Denim Jacket",
+        "description": "Classic denim jacket with modern styling. Versatile design suitable for casual and semi-formal occasions. Comfortable fit with multiple pockets.",
+        "price": 79.99,
+        "category": "clothing",
+        "brand": "Levi's",
+        "image_url": "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=400",
+        "tags": ["jacket", "denim", "casual", "fashion", "outerwear"]
+    },
+    {
+        "id": 6,
+        "name": "Smart Fitness Watch",
+        "description": "Advanced fitness tracking watch with heart rate monitoring, GPS, and sleep tracking. Water-resistant and compatible with smartphones.",
+        "price": 199.99,
+        "category": "electronics",
+        "brand": "Fitbit",
+        "image_url": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400",
+        "tags": ["watch", "fitness", "smartwatch", "tracking", "health"]
+    },
+    {
+        "id": 7,
+        "name": "Organic Cotton Hoodie",
+        "description": "Comfortable hoodie made from 100% organic cotton. Perfect for casual wear and light outdoor activities. Sustainable and eco-friendly.",
+        "price": 59.99,
+        "category": "clothing",
+        "brand": "Patagonia",
+        "image_url": "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400",
+        "tags": ["hoodie", "cotton", "casual", "organic", "sustainable"]
+    },
+    {
+        "id": 8,
+        "name": "Portable Bluetooth Speaker",
+        "description": "Compact wireless speaker with impressive sound quality. Waterproof design perfect for outdoor activities, parties, and travel.",
+        "price": 69.99,
+        "category": "electronics",
+        "brand": "JBL",
+        "image_url": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=400",
+        "tags": ["speaker", "bluetooth", "portable", "wireless", "audio"]
+    },
+    {
+        "id": 9,
+        "name": "Professional Camera Lens",
+        "description": "High-quality camera lens for professional photography. Excellent image quality with wide aperture for beautiful bokeh effects.",
+        "price": 299.99,
+        "category": "electronics",
+        "brand": "Canon",
+        "image_url": "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=400",
+        "tags": ["camera", "lens", "photography", "professional", "optical"]
+    },
+    {
+        "id": 10,
+        "name": "Eco-Friendly Water Bottle",
+        "description": "Reusable water bottle made from sustainable materials. Keeps drinks cold for 24 hours and hot for 12 hours. Perfect for daily use.",
+        "price": 24.99,
+        "category": "home",
+        "brand": "Hydro Flask",
+        "image_url": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400",
+        "tags": ["water bottle", "reusable", "eco-friendly", "sustainable", "insulated"]
+    }
+]
