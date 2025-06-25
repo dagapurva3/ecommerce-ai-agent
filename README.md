@@ -287,6 +287,8 @@ prompt: "What products do you see?"
 - "A comfortable hoodie"
 
 ## ��️ Project Structure
+
+```
 ecommerce-ai-agent/
 ├── backend/                        # Python Flask API and AI logic
 │   ├── app.py                      # Main Flask application (API entry point)
@@ -316,6 +318,7 @@ ecommerce-ai-agent/
 │           ├── ProductCard.js      # Product display card
 │           └── ProductsDisplay.js  # Product results grid
 └── README.md                       # Project documentation (this file)
+```
 
 
 ## 🔧 Technical Implementation
