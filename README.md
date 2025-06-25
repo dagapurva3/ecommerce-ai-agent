@@ -286,7 +286,7 @@ prompt: "What products do you see?"
 - "Wireless headphones"
 - "A comfortable hoodie"
 
-## ��️ Project Structure
+## 🗂️ Project Structure
 
 ```
 ecommerce-ai-agent/
