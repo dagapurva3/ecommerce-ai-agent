@@ -21,6 +21,8 @@ function formatGeminiResponse(text) {
     return formatted;
 }
 
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL
+
 function ChatInterface({ apiStatus }) {
     const [query, setQuery] = useState('');
     const [messages, setMessages] = useState([]);
@@ -68,7 +70,7 @@ function ChatInterface({ apiStatus }) {
             let response;
             const queryLower = query.toLowerCase();
             if (agentMode) {
-                response = await axios.post('http://localhost:5000/api/agent_chat', { query });
+                response = await axios.post(`${REACT_APP_BACKEND_URL}/api/agent_chat`, { query });
 
                 // Show product recommendations if present
                 setProducts(response.data.products || []);
@@ -96,7 +98,7 @@ function ChatInterface({ apiStatus }) {
                 queryLower.includes('looks like') ||
                 queryLower.startsWith('a ') // e.g., "A blue sports t-shirt"
             ) {
-                response = await axios.post('http://localhost:5000/api/image_search', { description: query });
+                response = await axios.post(`${REACT_APP_BACKEND_URL}/api/image_search`, { description: query });
                 setProducts(response.data.products || []);
                 setLastFeature('image');
                 setShowProducts(true);
@@ -117,7 +119,7 @@ function ChatInterface({ apiStatus }) {
                 queryLower.includes('show me') ||
                 queryLower.includes('looking for')
             ) {
-                response = await axios.post('http://localhost:5000/api/recommend', { query });
+                response = await axios.post(`${REACT_APP_BACKEND_URL}/api/recommend`, { query });
                 setProducts(response.data.products || []);
                 setLastFeature('text');
                 setShowProducts(true);
@@ -132,7 +134,7 @@ function ChatInterface({ apiStatus }) {
             }
             // General conversation
             else {
-                response = await axios.post('http://localhost:5000/api/chat', { query });
+                response = await axios.post(`${REACT_APP_BACKEND_URL}/api/chat`, { query });
                 setProducts(response.data.products || []);
                 setLastFeature('chat');
                 setShowProducts(!!(response.data.products && response.data.products.length > 0));
@@ -180,13 +182,13 @@ function ChatInterface({ apiStatus }) {
                 const formData = new FormData();
                 formData.append('image', file);
                 formData.append('prompt', "What products do you see?");
-                const agentResponse = await axios.post('http://localhost:5000/api/agent_image', formData, {
+                const agentResponse = await axios.post(`${REACT_APP_BACKEND_URL}/api/agent_image`, formData, {
                     headers: { 'Content-Type': 'multipart/form-data' }
                 });
                 // console.log(agentResponse)
 
                 // 2. Get product recommendations from chat API using Gemini's response
-                const chatResponse = await axios.post('http://localhost:5000/api/chat', {
+                const chatResponse = await axios.post(`${REACT_APP_BACKEND_URL}/api/chat`, {
                     query: agentResponse.data.response
                 });
                 // console.log(chatResponse)
@@ -211,7 +213,7 @@ function ChatInterface({ apiStatus }) {
             const formData = new FormData();
             formData.append('image', file);
 
-            const response = await axios.post('http://localhost:5000/api/image_upload', formData, {
+            const response = await axios.post(`${REACT_APP_BACKEND_URL}/api/image_upload`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
 

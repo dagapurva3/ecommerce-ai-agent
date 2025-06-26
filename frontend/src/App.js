@@ -3,6 +3,7 @@ import ChatInterface from './components/ChatInterface';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import './index.css';
+const REACT_APP_BACKEND_URL = process.env.REACT_APP_BACKEND_URL
 
 function App() {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,7 +16,7 @@ function App() {
 
     const checkApiHealth = async () => {
         try {
-            const response = await fetch('http://localhost:5000/');
+            const response = await fetch(`${REACT_APP_BACKEND_URL}/`);
             if (response.ok) {
                 setApiStatus('connected');
             } else {
@@ -61,7 +62,7 @@ function App() {
                     {apiStatus === 'error' && (
                         <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
                             <strong>Connection Error:</strong> Unable to connect to the backend API.
-                            Please ensure the backend server is running on http://localhost:5000
+                            Please ensure the backend server is running 
                         </div>
                     )}
 
